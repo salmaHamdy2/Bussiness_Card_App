@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(BusinessCard());
+  runApp(const BusinessCard());
 }
 
 class BusinessCard extends StatelessWidget {
+  const BusinessCard({super.key});
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0xff6F3D18),
@@ -36,65 +39,38 @@ class BusinessCard extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.bold, color: Color(0xffFEC55D)),
             ),
-            Padding(
-              padding: EdgeInsets.all(14),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(6)),
-                height: 50,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(14.0),
-                      child: Icon(
-                        Icons.phone,
-                        size: 28,
-                        color: Color(0xff6F3D18),
-                      ),
-                    ),
-                    Spacer(
-                      flex: 1,
-                    ),
-                    Text(
-                      "(+20) 01027462660",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Spacer(
-                      flex: 5,
-                    )
-                  ],
+            Divider(
+              color: Color(0xff542E15),
+              thickness: 2,
+              indent: 50,
+              endIndent: 50,
+              height: 20,
+            ),
+            Card(
+              margin: EdgeInsets.symmetric(vertical: 1, horizontal: 16),
+              child: ListTile(
+                leading: Icon(
+                  Icons.phone,
+                  size: 28,
+                  color: Color(0xff6F3D18),
+                ),
+                title: Text(
+                  "(+20) 01027462660",
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(14),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(6)),
-                height: 50,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(14.0),
-                      child: Icon(
-                        Icons.mail,
-                        size: 28,
-                        color: Color(0xff6F3D18),
-                      ),
-                    ),
-                    Spacer(
-                      flex: 1,
-                    ),
-                    Text(
-                      "zalmahamdy974@gmail.com",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    Spacer(
-                      flex: 3,
-                    )
-                  ],
+            Card(
+              margin: EdgeInsets.symmetric(vertical: 18, horizontal: 16),
+              child: ListTile(
+                leading: Icon(
+                  Icons.mail,
+                  size: 28,
+                  color: Color(0xff6F3D18),
+                ),
+                title: Text(
+                  "zalmahamdy974@gmail.com",
+                  style: TextStyle(fontSize: 18),
                 ),
               ),
             ),
